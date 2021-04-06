@@ -17,17 +17,18 @@ class Server(object):
         self.net_mark = args.net_mark
         self.data_dir = args.data_dir
         self.label_length = args.label_length
+        self.output_length = args.output_length
 
         self.mode = args.mode
         self.tolerance = args.tolerance
         dataProcessor = DataProcessor(self.data_dir)
-        self.trainloader, self.testloader = dataProcessor.read(self.mode)
+        self.trainloader, self.testloader = dataProcessor.read(self.mode, self.output_length)
         # 分割训练集
         self.dataset_list = list(self.trainloader)
         dataset_len = len(self.trainloader)
         self.epochs = dataset_len // self.num_clients
         # 创建全局模型
-        self.global_net = Net(self.label_length)
+        self.global_net = Net(self.label_length, self.output_length+1) # 由于取头取尾,所以加1
         # 提取网络参数
         self.global_net_dict = self.global_net.state_dict()
         # 定义损失函数
@@ -37,7 +38,7 @@ class Server(object):
             self.global_net.parameters(), lr=self.LR)
         # 生成客户端
         self.agent_list = [
-            Agent(self.LR, self.global_net_dict, self.label_length)]*self.num_clients
+            Agent(self.LR, self.global_net_dict, self.label_length, self.output_length)]*self.num_clients
         # 创建客户端梯度收集列表
         self.client_grad_dict_list = [0] * self.num_clients
 
@@ -84,9 +85,9 @@ class Server(object):
                     total_labels += labels.size(0)
                     _, predicted = torch.max(outputs.data, 1)
                     diff = (predicted - labels).abs()
-                    total_correct += (diff < self.tolerance).int().sum().item()
-                print('第%d个episode的识别准确率为：%d%% (误差区间：%d)' % (
-                    episode + 1, (int)(100 * (float)(total_correct / total_labels)), self.tolerance))
+                    total_correct += (diff <= self.tolerance).int().sum().item()
+                print('第%d个episode的识别准确率为：%f%% (误差区间：%d)' % (
+                    episode + 1, (float)(100 * (float)(total_correct / total_labels)), self.tolerance))
                 print('第%d个episode的平均loss为：%f' %
                       (episode + 1, (float)(total_loss / total_labels)))
         torch.save(self.global_net.state_dict(), '%s/net_%03d_%s.pth' %

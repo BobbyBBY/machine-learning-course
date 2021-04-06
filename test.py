@@ -9,3 +9,8 @@ mode_bin2 = mode_bin.copy()
 mode_bin2[0] = 3
 print(mode_bin)
 print(mode_bin2)
+
+print("__________________")
+a =1
+b=2
+print(c)

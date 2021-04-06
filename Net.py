@@ -9,7 +9,7 @@ import torch.nn as nn
 
 # 定义网络结构
 class Net(nn.Module):
-    def __init__(self, input):
+    def __init__(self, input, output):
         super(Net, self).__init__()
         self.l1 = nn.Sequential(
             nn.Linear(input, 64),
@@ -19,7 +19,7 @@ class Net(nn.Module):
             nn.Linear(64, 512),
             nn.ReLU()
         )
-        self.l3 = nn.Linear(512, 101)
+        self.l3 = nn.Linear(512, output)
 
     # 定义前向传播过程，输入为x
     def forward(self, x):

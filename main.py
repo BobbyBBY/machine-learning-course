@@ -21,7 +21,8 @@ def args_init_static():
     parser.add_argument('--LR', type=int, default=3, help="学习率")
     parser.add_argument('--batch_size', type=int, default=16, help="批处理尺寸")
     parser.add_argument('--episodes', type=int, default=10, help="数据集遍历次数")
-    parser.add_argument('--tolerance', type=int, default=10, help="正确性判定区间")
+    parser.add_argument('--tolerance', type=int, default=0, help="正确性判定区间")
+    parser.add_argument('--output_length', type=int, default=1, help="100,预测向量的维度取头取尾[0-100],对应的神经网络输出会多一维")
 
     parser.add_argument('--net_dir', type=str,
                         default='./testmodel/',    help="模型保存/加载路径")
@@ -53,15 +54,27 @@ def use_GPU(args):
     else:
         args.device = torch.device("cpu")
 
+def start_train(args):
+    args.label_length = Util.number_of_1(args.mode)
+    time_str = time.strftime('%m%d_%H%M%S', time.localtime(time.time()))
+    args.net_mark = time_str + "_" + str(args.mode) + "_" + str(args.output_length)
+    use_GPU(args)
+    server = Server(args)
+    server.start_train()
 
 if __name__ == '__main__':
     args = args_init_static()
+    # 选择不同的类别来训练
     mode_list = [127, 63, 111, 95, 31, 47, 15]
+    # 选择不同区间的标签来训练
+    args.output_length = 100
+    args.tolerance = 10
     for mode in mode_list:
         args.mode = mode
-        args.label_length = Util.number_of_1(args.mode)
-        time_str = time.strftime('%m%d_%H%M%S', time.localtime(time.time()))
-        args.net_mark = time_str + "_" + str(mode)
-        use_GPU(args)
-        server = Server(args)
-        server.start_train()
+        start_train(args)
+    args.output_length = 1
+    args.tolerance = 0
+    for mode in mode_list:
+        args.mode = mode
+        start_train(args)
+

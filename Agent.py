@@ -5,9 +5,10 @@ import torch.optim as optim
 from Net import Net
 
 class Agent(object):
-    def __init__(self, LR, global_net_dict, label_length):
+    def __init__(self, LR, global_net_dict, label_length, output_length):
         self.LR = LR
-        self.net = Net(label_length)
+        self.output_length = output_length
+        self.net = Net(label_length, self.output_length+1) # 由于取头取尾,所以加1
         self.net.load_state_dict(global_net_dict)
         self.criterion = nn.CrossEntropyLoss()
 

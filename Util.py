@@ -12,3 +12,7 @@ def int_to_str( n):
     # 反转字符串
     n_bin = n_bin[::-1]
     return n_bin
+
+# 一维映射函数
+def mapping(x, y, n):
+    pass

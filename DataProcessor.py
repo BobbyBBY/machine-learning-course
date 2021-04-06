@@ -21,7 +21,7 @@ class DataProcessor(object):
         self.label_list = ["Start year", "Start day", "End day",
                            "Time in bed", "Wake up", "Heart rate", "Activity (steps)"]
 
-    def read(self, mode):
+    def read(self, mode, output_length):
         # 时间string to datetime
         # 上床时间
         self.df["Start"] = pd.to_datetime(self.df["Start"])
@@ -46,7 +46,7 @@ class DataProcessor(object):
             "timedelta64[s]").astype(float) % 86400)/86400
         # 睡眠质量 string to int
         self.df["Sleep quality"] = self.df["Sleep quality"].apply(
-            lambda x: np.nan if x in ["-"] else x[:-1]).astype(int)
+            lambda x: np.nan if x in ["-"] else round((int(x[:-1]) * output_length)/100)).astype(int)
 
         # 由于存在许多空数据，根据MODE选择不同的label进行训练
         mode_bin = Util.int_to_str(mode)
