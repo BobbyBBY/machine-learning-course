@@ -1,0 +1,160 @@
+<class 'pandas.core.frame.DataFrame'>   
+RangeIndex: 887 entries, 0 to 886       
+Data columns (total 8 columns):
+Start               887 non-null object 
+End                 887 non-null object 
+Sleep quality       887 non-null object 
+Time in bed         887 non-null object 
+Wake up             246 non-null object 
+Sleep Notes         652 non-null object 
+Heart rate          162 non-null float64
+Activity (steps)    887 non-null int64  
+dtypes: float64(1), int64(1), object(6) 
+memory usage: 55.5+ KB
+第1个episode的识别准确率为：45% (误差区间：10)
+第1个episode的平均loss为：13.285319
+第2个episode的识别准确率为：42% (误差区间：10)
+第2个episode的平均loss为：0.237552
+第3个episode的识别准确率为：45% (误差区间：10)
+第3个episode的平均loss为：0.228179
+第4个episode的识别准确率为：42% (误差区间：10)
+第4个episode的平均loss为：0.246321
+第5个episode的识别准确率为：45% (误差区间：10)
+第5个episode的平均loss为：0.213080
+第6个episode的识别准确率为：42% (误差区间：10)
+第6个episode的平均loss为：0.214198
+第7个episode的识别准确率为：45% (误差区间：10)
+第7个episode的平均loss为：0.217282
+第8个episode的识别准确率为：45% (误差区间：10)
+第8个episode的平均loss为：0.219015
+第9个episode的识别准确率为：45% (误差区间：10)
+第9个episode的平均loss为：0.221886
+第10个episode的识别准确率为：45% (误差区间：10)
+第10个episode的平均loss为：0.223385
+successfully save the model to ./testmodel//net_011_0406_190334_127.pth
+第1个episode的识别准确率为：60% (误差区间：10)
+第1个episode的平均loss为：179.160721
+第2个episode的识别准确率为：60% (误差区间：10)
+第2个episode的平均loss为：0.381506
+第3个episode的识别准确率为：27% (误差区间：10)
+第3个episode的平均loss为：0.277137
+第4个episode的识别准确率为：60% (误差区间：10)
+第4个episode的平均loss为：0.288707
+第5个episode的识别准确率为：60% (误差区间：10)
+第5个episode的平均loss为：0.304558
+第6个episode的识别准确率为：60% (误差区间：10)
+第6个episode的平均loss为：0.294097
+第7个episode的识别准确率为：60% (误差区间：10)
+第7个episode的平均loss为：0.308451
+第8个episode的识别准确率为：60% (误差区间：10)
+第8个episode的平均loss为：0.304343
+第9个episode的识别准确率为：60% (误差区间：10)
+第9个episode的平均loss为：0.311860
+第10个episode的识别准确率为：60% (误差区间：10)
+第10个episode的平均loss为：0.312992
+successfully save the model to ./testmodel//net_011_0406_190334_63.pth
+第1个episode的识别准确率为：72% (误差区间：10)
+第1个episode的平均loss为：47.168144
+第2个episode的识别准确率为：39% (误差区间：10)
+第2个episode的平均loss为：16.542452
+第3个episode的识别准确率为：48% (误差区间：10)
+第3个episode的平均loss为：0.300340
+第4个episode的识别准确率为：72% (误差区间：10)
+第4个episode的平均loss为：0.355642
+第5个episode的识别准确率为：48% (误差区间：10)
+第5个episode的平均loss为：0.281822
+第6个episode的识别准确率为：72% (误差区间：10)
+第6个episode的平均loss为：0.378232
+第7个episode的识别准确率为：48% (误差区间：10)
+第7个episode的平均loss为：0.320462
+第8个episode的识别准确率为：72% (误差区间：10)
+第8个episode的平均loss为：0.352723
+第9个episode的识别准确率为：72% (误差区间：10)
+第9个episode的平均loss为：0.347432
+第10个episode的识别准确率为：72% (误差区间：10)
+第10个episode的平均loss为：0.354683
+successfully save the model to ./testmodel//net_011_0406_190335_111.pth
+第1个episode的识别准确率为：60% (误差区间：10)
+第1个episode的平均loss为：0.167114
+第2个episode的识别准确率为：60% (误差区间：10)
+第2个episode的平均loss为：0.164232
+第3个episode的识别准确率为：60% (误差区间：10)
+第3个episode的平均loss为：0.172358
+第4个episode的识别准确率为：62% (误差区间：10)
+第4个episode的平均loss为：0.166208
+第5个episode的识别准确率为：57% (误差区间：10)
+第5个episode的平均loss为：0.163628
+第6个episode的识别准确率为：60% (误差区间：10)
+第6个episode的平均loss为：0.183138
+第7个episode的识别准确率为：60% (误差区间：10)
+第7个episode的平均loss为：0.169006
+第8个episode的识别准确率为：52% (误差区间：10)
+第8个episode的平均loss为：0.166279
+第9个episode的识别准确率为：60% (误差区间：10)
+第9个episode的平均loss为：0.167983
+第10个episode的识别准确率为：60% (误差区间：10)
+第10个episode的平均loss为：0.175690
+successfully save the model to ./testmodel//net_011_0406_190335_95.pth
+第1个episode的识别准确率为：66% (误差区间：10)
+第1个episode的平均loss为：0.178958
+第2个episode的识别准确率为：62% (误差区间：10)
+第2个episode的平均loss为：0.167616
+第3个episode的识别准确率为：66% (误差区间：10)
+第3个episode的平均loss为：0.182134
+第4个episode的识别准确率为：66% (误差区间：10)
+第4个episode的平均loss为：0.182419
+第5个episode的识别准确率为：66% (误差区间：10)
+第5个episode的平均loss为：0.187653
+第6个episode的识别准确率为：64% (误差区间：10)
+第6个episode的平均loss为：0.168131
+第7个episode的识别准确率为：66% (误差区间：10)
+第7个episode的平均loss为：0.174354
+第8个episode的识别准确率为：57% (误差区间：10)
+第8个episode的平均loss为：0.167826
+第9个episode的识别准确率为：66% (误差区间：10)
+第9个episode的平均loss为：0.183072
+第10个episode的识别准确率为：64% (误差区间：10)
+第10个episode的平均loss为：0.169928
+successfully save the model to ./testmodel//net_011_0406_190335_31.pth
+第1个episode的识别准确率为：48% (误差区间：10)
+第1个episode的平均loss为：62.193893
+第2个episode的识别准确率为：63% (误差区间：10)
+第2个episode的平均loss为：0.265910
+第3个episode的识别准确率为：63% (误差区间：10)
+第3个episode的平均loss为：0.254631
+第4个episode的识别准确率为：63% (误差区间：10)
+第4个episode的平均loss为：0.375373
+第5个episode的识别准确率为：33% (误差区间：10)
+第5个episode的平均loss为：0.251198
+第6个episode的识别准确率为：63% (误差区间：10)
+第6个episode的平均loss为：0.327693
+第7个episode的识别准确率为：33% (误差区间：10)
+第7个episode的平均loss为：0.257543
+第8个episode的识别准确率为：63% (误差区间：10)
+第8个episode的平均loss为：0.269927
+第9个episode的识别准确率为：63% (误差区间：10)
+第9个episode的平均loss为：0.259406
+第10个episode的识别准确率为：63% (误差区间：10)
+第10个episode的平均loss为：0.262343
+successfully save the model to ./testmodel//net_011_0406_190335_47.pth
+第1个episode的识别准确率为：52% (误差区间：10)
+第1个episode的平均loss为：0.140795
+第2个episode的识别准确率为：39% (误差区间：10)
+第2个episode的平均loss为：0.138231
+第3个episode的识别准确率为：48% (误差区间：10)
+第3个episode的平均loss为：0.137073
+第4个episode的识别准确率为：52% (误差区间：10)
+第4个episode的平均loss为：0.136455
+第5个episode的识别准确率为：53% (误差区间：10)
+第5个episode的平均loss为：0.136116
+第6个episode的识别准确率为：53% (误差区间：10)
+第6个episode的平均loss为：0.135897
+第7个episode的识别准确率为：53% (误差区间：10)
+第7个episode的平均loss为：0.135819
+第8个episode的识别准确率为：53% (误差区间：10)
+第8个episode的平均loss为：0.135843
+第9个episode的识别准确率为：53% (误差区间：10)
+第9个episode的平均loss为：0.135928
+第10个episode的识别准确率为：54% (误差区间：10)
+第10个episode的平均loss为：0.136128
+successfully save the model to ./testmodel//net_011_0406_190336_15.pth

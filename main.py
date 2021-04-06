@@ -56,6 +56,12 @@ def use_GPU(args):
 
 if __name__ == '__main__':
     args = args_init_static()
-    use_GPU(args)
-    server = Server(args)
-    server.start_train()
+    mode_list = [127, 63, 111, 95, 31, 47, 15]
+    for mode in mode_list:
+        args.mode = mode
+        args.label_length = Util.number_of_1(args.mode)
+        time_str = time.strftime('%m%d_%H%M%S', time.localtime(time.time()))
+        args.net_mark = time_str + "_" + str(mode)
+        use_GPU(args)
+        server = Server(args)
+        server.start_train()

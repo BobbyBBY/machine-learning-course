@@ -17,7 +17,7 @@ class DataProcessor(object):
         # 使用open以识别中文路径
         self.df = pd.read_csv(open(data_dir), delimiter=";")
         # 查看空数据比例
-        self.df.info()
+        # self.df.info()
         self.label_list = ["Start year", "Start day", "End day",
                            "Time in bed", "Wake up", "Heart rate", "Activity (steps)"]
 
@@ -73,7 +73,7 @@ class DataProcessor(object):
         if "Heart rate" in selected_list:
             # 睡眠平均心率
             df2["Heart rate"] = df2["Heart rate"].astype("int")
-        if "Heart rate" in selected_list:
+        if "Activity (steps)" in selected_list:
             # 睡前当日步数
             df2["Activity (steps)"] = df2["Activity (steps)"].astype("int")
 
